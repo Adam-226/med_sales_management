@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>药品</h2>
+<table>
+    <thead>
+        <tr>
+            <th>名称</th>
+            <th>描述</th>
+            <th>价格</th>
+            <th>库存</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for medicine in medicines %}
+        <tr>
+            <td>{{ medicine.name }}</td>
+            <td>{{ medicine.description }}</td>
+            <td>{{ medicine.price }}</td>
+            <td>{{ medicine.stock }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('add_medicine') }}">添加新药品</a>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!-- templates/add_customer.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>添加新客户</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.name.label }}<br>
+        {{ form.name(size=32) }}<br>
+        {% for error in form.name.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.contact_info.label }}<br>
+        {{ form.contact_info(size=32) }}
+    </p>
+    <p>
+        {{ form.address.label }}<br>
+        {{ form.address(size=64) }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

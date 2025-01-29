@@ -1,0 +1,25 @@
+<!-- templates/suppliers.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>供应商</h2>
+<a href="{{ url_for('add_supplier') }}">添加新供应商</a>
+<table>
+    <thead>
+        <tr>
+            <th>名称</th>
+            <th>联系方式</th>
+            <th>地址</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for supplier in suppliers %}
+        <tr>
+            <td>{{ supplier.name }}</td>
+            <td>{{ supplier.contact_info }}</td>
+            <td>{{ supplier.address }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

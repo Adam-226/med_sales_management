@@ -1,0 +1,29 @@
+<!-- templates/sales.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>销售</h2>
+<a href="{{ url_for('add_sale') }}">添加新销售</a>
+<table>
+    <thead>
+        <tr>
+            <th>药品</th>
+            <th>客户</th>
+            <th>数量</th>
+            <th>销售日期</th>
+            <th>总价</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sale in sales %}
+        <tr>
+            <td>{{ sale.medicine.name }}</td>
+            <td>{{ sale.customer.name }}</td>
+            <td>{{ sale.quantity }}</td>
+            <td>{{ sale.sale_date }}</td>
+            <td>{{ sale.total_price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

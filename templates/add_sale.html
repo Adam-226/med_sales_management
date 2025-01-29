@@ -1,0 +1,38 @@
+<!-- templates/add_sale.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>添加新销售</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.medicine_id.label }}<br>
+        {{ form.medicine_id() }}<br>
+        {% for error in form.medicine_id.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.customer_id.label }}<br>
+        {{ form.customer_id() }}<br>
+        {% for error in form.customer_id.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.quantity.label }}<br>
+        {{ form.quantity() }}<br>
+        {% for error in form.quantity.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.sale_date.label }}<br>
+        {{ form.sale_date() }}<br>
+        {% for error in form.sale_date.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

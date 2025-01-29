@@ -1,0 +1,27 @@
+<!-- templates/purchases.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>采购</h2>
+<a href="{{ url_for('add_purchase') }}">添加新采购</a>
+<table>
+    <thead>
+        <tr>
+            <th>药品</th>
+            <th>数量</th>
+            <th>采购日期</th>
+            <th>供应商</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for purchase in purchases %}
+        <tr>
+            <td>{{ purchase.medicine.name }}</td>
+            <td>{{ purchase.quantity }}</td>
+            <td>{{ purchase.purchase_date }}</td>
+            <td>{{ purchase.supplier.name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

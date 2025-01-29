@@ -1,0 +1,38 @@
+<!-- templates/add_purchase.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>添加新采购</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.medicine_id.label }}<br>
+        {{ form.medicine_id() }}<br>
+        {% for error in form.medicine_id.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.quantity.label }}<br>
+        {{ form.quantity() }}<br>
+        {% for error in form.quantity.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.purchase_date.label }}<br>
+        {{ form.purchase_date() }}<br>
+        {% for error in form.purchase_date.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.supplier_id.label }}<br>
+        {{ form.supplier_id() }}<br>
+        {% for error in form.supplier_id.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+<!-- templates/returns_report.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>退货报告</h2>
+<table>
+    <thead>
+        <tr>
+            <th>药品</th>
+            <th>客户</th>
+            <th>退货日期</th>
+            <th>数量</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for return in returns %}
+        <tr>
+            <td>{{ return.sale.medicine.name }}</td>
+            <td>{{ return.sale.customer.name }}</td>
+            <td>{{ return.return_date }}</td>
+            <td>{{ return.quantity }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!-- templates/add_employee.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>添加新员工</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.name.label }}<br>
+        {{ form.name(size=32) }}<br>
+        {% for error in form.name.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.position.label }}<br>
+        {{ form.position(size=32) }}
+    </p>
+    <p>
+        {{ form.salary.label }}<br>
+        {{ form.salary() }}
+    </p>
+    <p>
+        {{ form.hire_date.label }}<br>
+        {{ form.hire_date() }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

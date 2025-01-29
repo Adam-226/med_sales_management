@@ -1,0 +1,27 @@
+<!-- templates/employees.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>员工</h2>
+<a href="{{ url_for('add_employee') }}">添加新员工</a>
+<table>
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>职位</th>
+            <th>薪水</th>
+            <th>入职日期</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.position }}</td>
+            <td>{{ employee.salary }}</td>
+            <td>{{ employee.hire_date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

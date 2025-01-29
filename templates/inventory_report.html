@@ -1,0 +1,22 @@
+<!-- templates/inventory_report.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>库存报告</h2>
+<table>
+    <thead>
+        <tr>
+            <th>药品</th>
+            <th>库存</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for medicine in medicines %}
+        <tr>
+            <td>{{ medicine.name }}</td>
+            <td>{{ medicine.stock }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

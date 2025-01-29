@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>欢迎来到医药销售管理系统</h2>
+<p>管理您的药品、员工、客户等。</p>
+{% if 'user_id' in session %}
+  <p>欢迎回来, {{ session['username'] }}!</p>
+{% else %}
+  <p>请<a href="{{ url_for('login') }}">登录</a>以访问系统。</p>
+{% endif %}
+{% endblock %}

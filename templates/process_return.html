@@ -1,0 +1,31 @@
+<!-- templates/process_return.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>处理退货</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.sale_id.label }}<br>
+        {{ form.sale_id() }}<br>
+        {% for error in form.sale_id.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.quantity.label }}<br>
+        {{ form.quantity() }}<br>
+        {% for error in form.quantity.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.return_date.label }}<br>
+        {{ form.return_date() }}<br>
+        {% for error in form.return_date.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

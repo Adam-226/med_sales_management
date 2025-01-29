@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>医药销售管理</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="header-background">
+        <h1>医药销售管理系统</h1>
+        <nav>
+            <div class="nav-column">
+                <ul>
+                    <li><a href="{{ url_for('index') }}">主页</a></li>
+                    <li><a href="{{ url_for('list_purchases') }}">采购</a></li>
+                    <li><a href="{{ url_for('list_sales') }}">销售</a></li>
+                    <li><a href="{{ url_for('process_return') }}">处理退货</a></li>
+                </ul>
+            </div>
+            <div class="nav-column">
+                <ul>
+                    <li><a href="{{ url_for('list_suppliers') }}">供应商</a></li>
+                    <li><a href="{{ url_for('list_medicines') }}">药品</a></li>
+                    <li><a href="{{ url_for('list_employees') }}">员工</a></li>
+                    <li><a href="{{ url_for('list_customers') }}">客户</a></li>
+                </ul>
+            </div>
+            <div class="nav-column">
+                <ul>
+                    <li><a href="{{ url_for('inventory_report') }}">库存报告</a></li>
+                    <li><a href="{{ url_for('sales_report') }}">销售报告</a></li>
+                    <li><a href="{{ url_for('returns_report') }}">退货报告</a></li>
+                    <li><a href="{{ url_for('financial_report') }}">财务报告</a></li>
+                </ul>
+            </div>
+            <div class="nav-column">
+                <ul>
+                    <li><a href="{{ url_for('list_users') }}">用户管理</a></li>
+                    {% if 'user_id' in session %}
+                        <li><a href="{{ url_for('logout') }}">登出</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}">登录</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="flash {{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 医药销售管理</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!-- templates/customers.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>客户</h2>
+<a href="{{ url_for('add_customer') }}">添加新客户</a>
+<table>
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>联系方式</th>
+            <th>地址</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.contact_info }}</td>
+            <td>{{ customer.address }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

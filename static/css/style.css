@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.header-background {
+    background-image: url('/static/images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black;
+    padding: 20px;
+    border: none;
+    box-shadow: none;
+}
+
+header {
+    background-color: transparent; /* 确保页眉背景透明 */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: transparent; /* 确保导航栏背景透明 */
+    padding: 10px;
+}
+
+.nav-column {
+    flex: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* 确保没有外边距 */
+}
+
+nav ul li {
+    margin: 5px 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    border-radius: 4px;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* 更深的半透明背景 */
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flash {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.flash.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}

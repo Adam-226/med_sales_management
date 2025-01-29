@@ -1,0 +1,14 @@
+<!-- templates/settings.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>系统设置</h2>
+<form method="POST">
+    {% for setting in settings %}
+    <p>
+        {{ setting.key }}: <input type="text" name="{{ setting.key }}" value="{{ setting.value }}">
+    </p>
+    {% endfor %}
+    <p><input type="submit" value="保存更改"></p>
+</form>
+{% endblock %}

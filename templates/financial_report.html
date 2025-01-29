@@ -1,0 +1,20 @@
+<!-- templates/financial_report.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h2>财务报告</h2>
+
+<h3>今日统计</h3>
+<ul>
+    <li>总销售额: {{ today_sales }}</li>
+    <li>总退货额: {{ today_returns }}</li>
+    <li>净收入: {{ today_net }}</li>
+</ul>
+
+<h3>本月统计</h3>
+<ul>
+    <li>总销售额: {{ month_sales }}</li>
+    <li>总退货额: {{ month_returns }}</li>
+    <li>净收入: {{ month_net }}</li>
+</ul>
+{% endblock %}

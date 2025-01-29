@@ -3,9 +3,3 @@
 默认帐户如下：（管理员）
 用户名：administrator
 密码：123456# med_sales_management
-# med_sales_management
-# med_sales_management
-# med_sales_management
-# med_sales_management
-# med_sales_management
-# med_sales_management

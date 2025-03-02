@@ -3,12 +3,12 @@ from sqlalchemy import create_engine, text
 
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'your_secret_key')
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'mysql+pymysql://root:adam1624@localhost/med_sales_db')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'mysql+pymysql://root:********@localhost/med_sales_db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     @staticmethod
     def init_db():
-        engine = create_engine('mysql+pymysql://root:adam1624@localhost/')
+        engine = create_engine('mysql+pymysql://root:********@localhost/')
         conn = engine.connect()
         conn.execute(text("CREATE DATABASE IF NOT EXISTS med_sales_db"))
         conn.close()
